@@ -44,11 +44,11 @@ public class HighchartsPanel extends Panel implements IHeaderContributor {
     * because the script needs to be called each time the component is refreshed using wicket
     * ajax support.
     */
-    add(new Label("script", new AbstractReadOnlyModel<String>() {
+    add(new Label("script", new AbstractReadOnlyModel() {
       private static final long serialVersionUID = 1L;
 
       @Override
-      public String getObject() {
+      public Object getObject() {
         StringBuffer js = new StringBuffer();
         js.append("var ").append(chartDiv.getMarkupId()).append(";\n");
         js.append("$(document).ready(function() {\n");
