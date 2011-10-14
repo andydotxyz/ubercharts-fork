@@ -25,8 +25,10 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.panel.Panel;
 import org.apache.wicket.model.AbstractReadOnlyModel;
 
+import java.io.Serializable;
 
-public class HighchartsPanel extends Panel implements IHeaderContributor {
+
+public class HighchartsPanel extends Panel implements IHeaderContributor, Serializable {
 
   public HighchartsPanel(String id, final Highchart highcharts) {
     super(id);

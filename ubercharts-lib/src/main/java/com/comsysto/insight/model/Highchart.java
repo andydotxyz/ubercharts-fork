@@ -24,12 +24,11 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Highchart {
-
-    private ObjectMapper mapper = new ObjectMapper();
+public class Highchart implements Serializable {
 
     private Chart chart;
     private String[] colors;
@@ -49,7 +48,6 @@ public class Highchart {
     private Navigation navigation;
 
     public Highchart() {
-        mapper.getSerializationConfig().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
     }
 
     public Highchart(Chart pChart, ISeries... pSeries) {
@@ -65,6 +63,8 @@ public class Highchart {
 
 
     public String toJson() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.getSerializationConfig().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
 
         String json = "";
 

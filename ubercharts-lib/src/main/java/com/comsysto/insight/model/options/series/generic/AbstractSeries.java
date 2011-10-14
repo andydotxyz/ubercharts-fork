@@ -19,6 +19,8 @@ package com.comsysto.insight.model.options.series.generic;
 import com.comsysto.insight.model.options.ChartType;
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import java.io.Serializable;
+
 /**
  * Abstract implementation of ISeries, implementing all needed methods, except for {@link ISeries#setData(Object)}. You
  * should not need to implement this class by your own as the existing implementations should cover all possible
@@ -34,7 +36,7 @@ import org.codehaus.jackson.annotate.JsonProperty;
  * @see com.comsysto.insight.model.options.series.impl.NumberSeries
  * @see com.comsysto.insight.model.options.series.impl.PointSeries
  */
-abstract public class AbstractSeries<DataType> implements ISeries<DataType> {
+abstract public class AbstractSeries<DataType> implements ISeries<DataType>, Serializable {
 
     /** {@link ISeries#getData()} */
     protected DataType mData = null;
