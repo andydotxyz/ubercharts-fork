@@ -65,7 +65,6 @@ public class HighchartsPanel extends Panel implements IHeaderContributor {
   }
 
   public void renderHead(IHeaderResponse response) {
-    response.renderJavascriptReference(new ResourceReference(this.getClass(), "jquery-1.4.4.min.js"));
     response.renderJavascriptReference(new ResourceReference(this.getClass(), "highcharts.js"));
     response.renderJavascriptReference(new ResourceReference(this.getClass(), "exporting.js"));
   }
