@@ -74,9 +74,6 @@ public class Highchart implements Serializable {
             e.printStackTrace();
         }
 
-        // dump JSON object
-        System.out.println(json);
-
         return json;
     }
 
